@@ -1,0 +1,99 @@
+.add-book {
+  background-color: beige;
+  color: chocolate;
+  font-size: 14px;
+  padding: 8px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: 0.3s background-color;
+}
+
+.add-book:hover {
+  background-color: rgb(244, 244, 242);
+}
+
+.navbar {
+  background-color: #fff;
+  height: 80px;
+  margin: 20px;
+  border-radius: 16px;
+  padding: 0.5rem;
+}
+
+.navbar-brand {
+  font-weight: 380;
+  color: chocolate;
+  font-size: 24px;
+  transition: 0.3s color;
+}
+
+.navbar-toggler {
+  border: none;
+  font-size: 1.25rem;
+}
+
+.navbar-toggler:focus,
+btn-close:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+/* relative positioning moves an element relative 
+*  to its default position on the page,
+*  while absolute positioning moves an element
+*  relative to its nearest positioned ancestor.
+ */
+.nav-link {
+  font-family: cursive;
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: black;
+}
+
+/* the media query will stop the styled underline 
+ * from occuring on the toggle screen because the
+ * toggle screen will occur under the specified pixel
+ * requirement
+*/
+@media (min-width: 991px) {
+  .nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: chocolate;
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+  }
+
+  .nav-link:hover::before,
+  .nav-link.active::before {
+    width: 100%;
+    visibility: visible;
+  }
+}
+
+/* body section */
+.body-section {
+  background: url(../themes/texturedwhite.jpg) no-repeat center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* this will slightly darkern the entire body section */
+.body-section::before {
+  background-color: rgba(0, 0, 0, 0.15);
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
