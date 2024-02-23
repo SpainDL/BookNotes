@@ -97,3 +97,11 @@ btn-close:focus {
   bottom: 0;
   left: 0;
 }
+
+
+/* footer section */
+.footer{
+  /* min-height: 100%; */
+  position: absolute;
+ bottom: 0;
+}
