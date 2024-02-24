@@ -107,19 +107,12 @@ btn-close:focus {
 }
 
 /* addbook section */
-.section {
-  size: 100vh;
-  width: 100%;
-  height: 100%;
-}
+
 .add-book-body {
   padding: auto;
   position: relative;
   text-align: center;
   top: 25%;
-  min-height: 10%;
-  /* height: 100%;
-  width: 100%; */
 }
 
 .book-form {
@@ -149,10 +142,4 @@ btn-close:focus {
   margin-bottom: 1rem;
 }
 
-.wrapper{
-  position: relative;
-}
-.wrapper div{
-  position: absolute;
-  
-}
+
