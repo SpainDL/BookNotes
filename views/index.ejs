@@ -11,7 +11,24 @@
   />
 </head>
 <body class="body-section">
+  <div class="bookCards">
   <%-include("partials/header.ejs")%> 
-  
-  <%-include("partials/footer.ejs")%>
+  <%if(locals.books){ %> 
+    <%books.forEach(book => { %>
+      <img>
+      <h1>Title : <%=book.title%></h1>
+      <h3>ISBN: <%=book.isbn%></h3>  
+      <h3>Read On: <%=book.readon%></h3>
+      <h3>Rating: <%=book.rating%></h3> 
+      <p>Notes: <%=book.notes%></p>
+
+      title: book.title,
+      isbn: book.isbn,
+      rating: book.rating,
+      date: book.readon,
+      notes: book.notes,
+      poster: image
+    <%})%>
+  <%}%> <%-include("partials/footer.ejs")%>
+  </div>
 </body>
