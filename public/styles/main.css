@@ -112,7 +112,7 @@ btn-close:focus {
   padding: auto;
   position: relative;
   text-align: center;
-  top: 25%;
+  bottom: 50%;
 }
 
 .book-form {
@@ -128,11 +128,6 @@ btn-close:focus {
   max-height: fit-content;
 }
 
-.book-input {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
 .book-form-label {
   width: 50%;
 }
@@ -142,4 +137,6 @@ btn-close:focus {
   margin-bottom: 1rem;
 }
 
-
+.section {
+  padding-top: 10rem;
+}
