@@ -11,24 +11,56 @@
   />
 </head>
 <body class="body-section">
-  <div class="bookCards">
-  <%-include("partials/header.ejs")%> 
-  <%if(locals.books){ %> 
+  <div class="section">
+    <%-include("partials/header.ejs")%> <%if(locals.books){ %>
     <%books.forEach(book => { %>
-      <img>
-      <h1>Title : <%=book.title%></h1>
-      <h3>ISBN: <%=book.isbn%></h3>  
-      <h3>Read On: <%=book.readon%></h3>
-      <h3>Rating: <%=book.rating%></h3> 
-      <p>Notes: <%=book.notes%></p>
-
-      title: book.title,
-      isbn: book.isbn,
-      rating: book.rating,
-      date: book.readon,
-      notes: book.notes,
-      poster: image
-    <%})%>
-  <%}%> <%-include("partials/footer.ejs")%>
+    <div
+      class="card mb-3 mx-auto"
+      style="max-width: 540px"
+    >
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img
+            style="min-height: 100%; max-width: 100%"
+            src="<%=book.image%>"
+            class="img rounded-start"
+            alt="..."
+          />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h3 class="card-title"><%=book.title%></h3>
+            <h5 class="card-text">ISBN: <%=book.isbn%></h5>
+            <p class="card-text">Read On: <%=book.read%></p>
+            <p class="card-text">Rating: <%=book.rating%></p>
+            <p>
+              Reader Notes:
+              <small class="text-body-secondary"> <%=book.notes%></small>
+            </p>
+            <form action="/edit-book" method="post">
+              <!-- <input style="visibility:hidden; max-width: 0;" name="test"> -->
+              <input
+              style="visibility: hidden; width: 0%;"
+                class="btn btn-primary"
+                type="text"
+                name="name"
+                value="<%=book.title%>"
+              />
+              <button class="btn btn-primary">Edit</button>
+              <button
+                id="<%=book.title%>"
+                type="submit"
+                href="#"
+                class="btn btn-danger"
+              >
+                Delete
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+  <%})%> <%}%>
+  <div class="footer"><%-include("partials/footer.ejs")%></div>
 </body>
