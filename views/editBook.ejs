@@ -12,10 +12,60 @@
   </head>
   <%-include("partials/header.ejs")%>
   <form
-  action="/edit"
+  action="/update"
   method="post"
   >
-  <%-include("partials/bookEntry.ejs")%>
+<section class="section">
+  <div class="add-book-body">
+    <div class="book-form mx-auto">
+      <div class="book-input">
+        <form action="/update" method="post">
+        <input
+          name="title"
+          type="text"
+          class="form-control"
+          value="<%=book.title%>"
+        />
+        <input
+          name="isbn"
+          type="text"
+          class="form-control"
+          value="<%=book.isbn%>"
+        />
+        <input
+          name="rating"
+          type="text"
+          class="form-control"
+          value="<%=book.rating%>"
+        />
+        <input
+          name="date"
+          type="date"
+          class="form-control"
+          value="<%=book.readon.toISOString().split('T')[0]%>"
+        />
+        <textarea
+          name="notes"
+          rows="6"
+          cols="50"
+          class="form-control"
+        ><%=book.notes%></textarea>
+        <button
+          type="submit"
+          class="btn btn-primary mx-1"
+        >
+          Submit
+        </button>
+        <button
+          type=""
+          class="btn btn-danger"
+        >
+          Reset
+        </button>
+      </div>
+    </div>
+  </div>
+  </section>
   </form>
   <%-include("partials/footer.ejs")%>
   
